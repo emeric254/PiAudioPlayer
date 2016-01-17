@@ -1,5 +1,6 @@
 #!/bin/bash
 
+PiNAME="PiAudio"
 
 # installation paquets nécessaires
 apt-get install -y -q bluez pulseaudio-module-bluetooth python-gobject python-gobject-2 bluez-tools bluez-firmware gstreamer1.0-pulseaudio
@@ -17,7 +18,7 @@ EOF
 
 
 # configuration /etc/bluetooth/main.conf
-sed -i '/Name =/c\Name = BluePi' /etc/bluetooth/main.conf
+sed -i '/Name =/c\Name = $PiNAME' /etc/bluetooth/main.conf
 sed -i '/Class =/c\Class = 0x20041C' /etc/bluetooth/main.conf
 sed -i '/DiscoverableTimeout =/c\DiscoverableTimeout = 0' /etc/bluetooth/main.conf
 
@@ -74,3 +75,7 @@ chmod 755 /usr/local/bin/simple-agent.autotrust
 service bluetooth start &
 service pulseaudio start &
 service bluetooth-agent start &
+
+
+# renaming
+hciconfig hci0 name $PiNAME
