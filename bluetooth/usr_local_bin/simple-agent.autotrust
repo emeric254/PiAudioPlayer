@@ -89,6 +89,7 @@ class Agent(dbus.service.Object):
         #   return
         #raise Rejected("Passkey doesn't match")
         set_trusted(device)
+        return
 
     @dbus.service.method(AGENT_INTERFACE, in_signature="o", out_signature="")
     def RequestAuthorization(self, device):
