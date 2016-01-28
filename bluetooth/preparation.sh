@@ -13,7 +13,7 @@ usermod -a -G lp pi
 # configuration /etc/bluetooth/audio.conf
 cat <<'EOF' > /etc/bluetooth/audio.conf
 [General]
-Enable=Source,Sink,Media,Socket
+Enable=Source,Sink,Headset,Gateway,Control,Socket,Media
 EOF
 
 
@@ -21,6 +21,7 @@ EOF
 sed -i '/Name =/c\Name = $PiNAME' /etc/bluetooth/main.conf
 sed -i '/Class =/c\Class = 0x20041C' /etc/bluetooth/main.conf
 sed -i '/DiscoverableTimeout =/c\DiscoverableTimeout = 0' /etc/bluetooth/main.conf
+sed -i '/PairableTimeout =/c\PairableTimeout = 0' /etc/bluetooth/main.conf
 
 
 # configuration /etc/pulse/daemon.conf
@@ -81,6 +82,7 @@ service bluetooth-agent start &
 systemctl enable bluetooth
 systemctl enable pulseaudio
 systemctl enable bluetooth-agent
+update-rc.d bluetooth-agent enable
 
 
 # renaming
