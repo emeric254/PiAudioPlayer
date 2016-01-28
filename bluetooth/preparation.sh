@@ -77,5 +77,11 @@ service pulseaudio start &
 service bluetooth-agent start &
 
 
+# activation au démarrage des services
+systemctl enable bluetooth
+systemctl enable pulseaudio
+systemctl enable bluetooth-agent
+
+
 # renaming
 hciconfig hci0 name $PiNAME
