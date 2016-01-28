@@ -64,6 +64,7 @@ update-rc.d bluetooth-agent defaults
 
 # creation fichiers /usr/local/bin/*
 cp usr_local_bin/bluez-udev /usr/local/bin/bluez-udev
+
 cp usr_local_bin/bluezutils.py /usr/local/bin/bluezutils.py
 cp usr_local_bin/simple-agent.autotrust  /usr/local/bin/simple-agent.autotrust
 
@@ -82,7 +83,6 @@ service bluetooth-agent start &
 systemctl enable bluetooth
 systemctl enable pulseaudio
 systemctl enable bluetooth-agent
-update-rc.d bluetooth-agent enable
 
 
 # renaming
