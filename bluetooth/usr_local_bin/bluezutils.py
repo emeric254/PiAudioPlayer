@@ -36,7 +36,7 @@ def find_device_in_objects(objects, device_address, adapter_pattern=None):
         device = ifaces.get(DEVICE_INTERFACE)
         if device is None:
             continue
-        if (device["Address"] == device_address and path.startswith(path_prefix)):
+        if device["Address"] == device_address and path.startswith(path_prefix):
             obj = bus.get_object(SERVICE_NAME, path)
             return dbus.Interface(obj, DEVICE_INTERFACE)
 
