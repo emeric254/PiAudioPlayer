@@ -6,6 +6,7 @@
 
   * un récepteur sonore Bluetooth
   * un Upnp renderer
+  * Web-radio et Recepteur MPD (https://github.com/mopidy/mopidy)
 
 
 
