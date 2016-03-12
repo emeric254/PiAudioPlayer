@@ -13,9 +13,10 @@ wget -q -O /etc/apt/sources.list.d/mopidy.list https://apt.mopidy.com/jessie.lis
 
 # installation
 apt-get update -y -q
-apt-get install -y -q build-essential python-dev python-pip gstreamer0.10-plugins-bad gstreamer0.10-plugins-good gstreamer0.10-plugins-ugly gstreamer0.10-plugins-base
-#easy_install pip
-easy_install-2.7 pip
+apt-get install -y -q build-essential python-dev python-pip gstreamer0.10-plugins-bad gstreamer0.10-plugins-good gstreamer0.10-plugins-ugly gstreamer0.10-plugins-base gir1.2-gstreamer-1.0  gir1.2-gst-plugins-base-1.0
+#easy_install pip tornado
+easy_install-2.7 pip tornado
+#pip install --upgrade mopidy mopidy-soundcloud mopidy-dirble mopidy-dleyna mopidy-tunein mopidy-podcast mopidy-somafm mopidy-beets mopidy-podcast-itunes mopidy-scrobbler mopidy-mpris Mopidy_MFE Mopidy-AudioAddict Mopidy-Qsaver Mopidy-Mobile Mopidy-Banshee Mopidy-Notifier Mopidy-Simple-Webclient Mopidy-Moped Mopidy-InternetArchive Mopidy-Local-Images Mopidy-WebSettings Mopidy-MusicBox-Webclient
 pip2 install --upgrade mopidy mopidy-soundcloud mopidy-dirble mopidy-dleyna mopidy-tunein mopidy-podcast mopidy-somafm mopidy-beets mopidy-podcast-itunes mopidy-scrobbler mopidy-youtube mopidy-mpris Mopidy_MFE Mopidy-AudioAddict Mopidy-Qsaver Mopidy-Mobile Mopidy-Banshee Mopidy-Notifier Mopidy-Simple-Webclient Mopidy-Moped Mopidy-InternetArchive Mopidy-Local-Images Mopidy-WebSettings Mopidy-GMusic Mopidy-MusicBox-Webclient configobj jinja2 pafy
 
 # recherche plugins
